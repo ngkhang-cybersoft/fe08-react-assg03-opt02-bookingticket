@@ -2,9 +2,10 @@ import "./Booking.scss";
 import Seats from "../../../dataSeats.json";
 import DataMovie from "../../../dataMovie.json";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addTicket, delAllTicket } from "../../redux/reducers/rdcTicket";
+import { setConfig } from "../../redux/reducers/rdcToast";
 
 const rowsSeat = Seats.slice(1);
 const infoSeat = [
@@ -27,13 +28,26 @@ const infoSeat = [
     className: "booking",
   },
 ];
+const getStatusSeat = (seats, daDat, soGhe) => {
+  if (daDat) return "block";
+  return seats.findIndex((ticket) => ticket.soGhe === soGhe) !== -1
+    ? "booking"
+    : "empty";
+};
 
 const Home = () => {
-  const { movieSlug } = useParams();
   const [movie, setMovie] = useState({});
+  const { movieSlug } = useParams();
+  const refHome = useRef(null);
   const { tickets } = useSelector((state) => state.rdcTicket);
+  const { toast } = useSelector((state) => state.rdcToast);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    refHome.current.scrollIntoView();
+    dispatch(delAllTicket());
+  }, [refHome, dispatch]);
 
   useEffect(() => {
     const movie = DataMovie.find((item) => item.slug === movieSlug);
@@ -41,32 +55,57 @@ const Home = () => {
     setMovie(movie);
   }, [movieSlug, navigate]);
 
-  const handleAddTicket = (e, seat) => {
+  // Add new ticket
+  const handleAddTicket = (seat) => {
     const action = addTicket({
       seat,
     });
     dispatch(action);
   };
 
+  // Delete All tickets
   const handleDelAllTicket = () => {
     dispatch(delAllTicket());
   };
 
-  const statusSeat = (daDat, soGhe) => {
-    if (daDat) return "block";
-    return tickets.findIndex((ticket) => ticket.soGhe === soGhe) !== -1
-      ? "booking"
-      : "empty";
-  };
-
-  const handlePayment = () => {
+  // Direct
+  const handleDirect = () => {
     handleDelAllTicket();
     navigate("/");
   };
 
+  // Button Payment
+  const handleBtnPayment = () => {
+    let configToast = { ...toast };
+    if (tickets.length) {
+      configToast = {
+        isShow: true,
+        isSuccess: true,
+        className: "bg-success text-white",
+        content: {
+          title: "Thanh toán",
+          message: "Thanh toán thành công",
+        },
+        handleDirect,
+      };
+    } else {
+      configToast = {
+        isShow: true,
+        className: "bg-danger text-white",
+        content: {
+          title: "Thanh toán",
+          message: "Vui long chọn vé",
+        },
+        isSuccess: false,
+      };
+    }
+
+    dispatch(setConfig(configToast));
+  };
+
   return (
     <>
-      <div id="homePage" className="py-4">
+      <div id="homePage" ref={refHome} className="py-4">
         <div className="container-lg">
           <div className="card">
             <div className="card-header text-center px-4">
@@ -92,12 +131,13 @@ const Home = () => {
                             className="seat col-1 px-1 px-xxl-2 d-flex justify-content-center align-items-center"
                           >
                             <button
-                              className={`w-100 py-1 py-md-2 rounded-2 ${statusSeat(
+                              className={`w-100 py-1 py-md-2 rounded-2 ${getStatusSeat(
+                                tickets,
                                 seat.daDat,
                                 seat.soGhe
                               )}`}
                               disabled={seat.daDat}
-                              onClick={(e) => handleAddTicket(e, seat)}
+                              onClick={() => handleAddTicket(seat)}
                             >
                               {seat.soGhe}
                             </button>
@@ -173,7 +213,7 @@ const Home = () => {
                 <div className="col-8 d-flex justify-content-end">
                   <button
                     className="btn btn-payment px-4 px-md-5"
-                    onClick={handlePayment}
+                    onClick={handleBtnPayment}
                   >
                     Mua vé
                   </button>

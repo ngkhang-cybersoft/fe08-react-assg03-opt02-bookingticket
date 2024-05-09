@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import BG_ERROR from '../../assets/img/bg-page404.png'
 import "./page404.scss";
 
 const Page404 = () => {
   return (
     <div
       id="page404"
+      style={{backgroundImage: `url(${BG_ERROR})`}}
       className="vh-100 d-flex justify-content-center align-items-center position-relative"
     >
       <div className="p-3 rounded-3 shadow-lg">
