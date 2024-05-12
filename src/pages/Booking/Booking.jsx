@@ -8,28 +8,10 @@ import { addTicket, delAllTicket } from "../../redux/reducers/rdcTicket";
 import { setConfig } from "../../redux/reducers/rdcToast";
 import ItemSeat from "./ItemSeat/ItemSeat";
 import Spinner from "../../components/Spinner/Spinner";
+import { getTotalPriceAndFormat } from '../../utils/func';
+import { infoSeat } from '../../utils/constant';
 
 const rowsSeat = Seats.slice(1);
-const infoSeat = [
-  {
-    id: 1,
-    type: "empty",
-    content: "Ghế VIP",
-    className: "empty",
-  },
-  {
-    id: 2,
-    type: "block",
-    content: "Đã đặt",
-    className: "block",
-  },
-  {
-    id: 3,
-    type: "booking",
-    content: "Ghế đang chọn",
-    className: "booking",
-  },
-];
 
 const Home = () => {
   const { movieSlug } = useParams();
@@ -82,18 +64,19 @@ const Home = () => {
           title: "Thanh toán",
           message: "Vui long chọn vé",
         },
+        callback: null,
       };
     }
 
     dispatch(setConfig(configToast));
   };
-  
+
   useEffect(() => {
     scrollRef.current.scrollIntoView();
 
     return () => {
       dispatch(delAllTicket());
-    }
+    };
   }, [scrollRef, dispatch]);
 
   useEffect(() => {
@@ -110,7 +93,6 @@ const Home = () => {
     let timeID = fakeCallAPI();
 
     return () => {
-      // handleDelAllTicket();
       clearTimeout(timeID);
     };
   }, [movieSlug, navigate]);
@@ -205,13 +187,7 @@ const Home = () => {
               <div className="d-flex justify-content-between align-items-stretch py-2 py-lg-3">
                 <div className="col-4 fw-bold">
                   <p className="mb-1 mb-md-2">Tạm tính</p>
-                  <p className="fs-6 mb-0">
-                    {tickets.reduce(
-                      (total, ticket) => (total += ticket.gia),
-                      0
-                    )}
-                    đ
-                  </p>
+                  <p className="fs-6 mb-0">{getTotalPriceAndFormat(tickets)}</p>
                 </div>
                 <div className="col-8 d-flex justify-content-end">
                   <button
