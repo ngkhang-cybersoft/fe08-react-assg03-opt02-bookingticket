@@ -1,6 +1,88 @@
 [
   {
     "id": 1,
+    "title": "Kingdom of the Planet of the Apes",
+    "slug": "kingdom-of-the-planet-of-the-apes",
+    "genre": "Sci-Fi, Action",
+    "year": 2024,
+    "rating": 7.1,
+    "director": "Wes Ball",
+    "actors": [
+      "Owen Teague",
+      "Freya Allan",
+      "Kevin Durand",
+      "Peter Macon",
+      "William H. Macy"
+    ],
+    "duration": "145 min",
+    "description": "Many years after Caesar's reign, a young ape embarks on a journey that challenges everything he knows, shaping the future for apes and humans alike.",
+    "showInfo": "10:40 ~ 13:25 · Thứ 3, 13/05 · Phòng chiếu Cinema 4 · 2D Phụ đề",
+    "rateType": "PG-13",
+    "poster": "./img/posters/kingdom-of-the-planet-of-the-apes.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Lật Mặt 7: Một Điều Ước",
+    "slug": "lat-mat-7-mot-dieu-uoc",
+    "genre": "Comedy, Drama",
+    "year": 2024,
+    "rating": 9.6,
+    "director": "Lý Hải",
+    "actors": [
+      "Kiều Minh Tuệ",
+      "Trấn Thành",
+      "Mạc Văn Mậu",
+      "Thanh Hiền",
+      "BB Trần",
+      "Song Luân"
+    ],
+    "duration": "138 min",
+    "description": "The story revolves around a group of friends who embark on a journey to fulfill a dying friend's wish, facing challenges and uncovering hidden truths along the way.",
+    "showInfo": "23:30 ~ 02:10 · Thứ 3, 13/05 · Phòng chiếu Cinema 5 · 2D Phụ đề",
+    "rateType": "PG",
+    "poster": "./img/posters/lat-mat-7-mot-dieu-uoc.jpg"
+  },
+  {
+    "id": 3,
+    "title": "The Roundup: Punishment",
+    "slug": "the-roundup-punishment",
+    "genre": "Action, Crime",
+    "year": 2024,
+    "rating": 9.7,
+    "director": "Kim Min-ho",
+    "actors": [
+      "Ma Dong-seok",
+      "Son Seok-koo",
+      "Choi Gui-hwa",
+      "Park Ji-hwan"
+    ],
+    "duration": "109 min",
+    "description": "The sequel to the 2017 Korean action comedy film 'The Roundup'. Mafia boss Ma Dong-seok travels to Vietnam to extradite a Korean gangster who has been causing trouble.",
+    "showInfo": "16:30 ~ 18:19 · Thứ 3, 13/05 · Phòng chiếu Cinema 4 · 2D Phụ đề",
+    "rateType": "R",
+    "poster": "./img/posters/the-roundup-punishment.jpg"
+  },
+  {
+    "id": 4,
+    "title": "10 Lives",
+    "slug": "10-lives",
+    "genre": "Action, Adventure",
+    "year": 2024,
+    "rating": 8.8,
+    "director": "Tom Green",
+    "actors": [
+      "Kevin Hart",
+      "Mila Kunis",
+      "Samuel L. Jackson"
+    ],
+    "duration": "88 min",
+    "description": "A down-on-his-luck alley cat is given a chance to live a luxurious life as a pampered feline, but soon discovers that it comes with a hefty price.",
+    "showInfo": "16:30 ~ 18:19 · Thứ 3, 13/05 · Phòng chiếu Cinema 4 · 2D Phụ đề",
+    "rateType": "P",
+    "poster": "./img/posters/10-lives.jpg"
+  },
+  {
+    "id": 5,
     "title": "The Matrix",
     "slug": "the-matrix",
     "genre": "Action",
@@ -14,12 +96,12 @@
     ],
     "duration": "136 min",
     "description": "A computer hacker learns about the true nature of his reality and his role in the war against its controllers.",
-    "showInfo": "20:40 ~ 23:20 · Hôm nay, 06/05 · Phòng chiếu Cinema 5 · 2D Phụ đề",
+    "showInfo": "20:40 ~ 23:20 · Thứ 06/05 · Phòng chiếu Cinema 5 · 2D Phụ đề",
     "rateType": "R",
     "poster": "./img/posters/the-matrix.jpg"
   },
   {
-    "id": 2,
+    "id": 6,
     "title": "Inception",
     "slug": "inception",
     "genre": "Sci-Fi",
@@ -33,12 +115,12 @@
     ],
     "duration": "148 min",
     "description": "A thief who enters the dreams of others to steal their secrets from their subconscious.",
-    "showInfo": "18:00 ~ 21:00 · Hôm nay, 06/05 · Phòng chiếu Cinema 1 · 2D Phụ đề",
+    "showInfo": "18:00 ~ 21:00 · Thứ 06/05 · Phòng chiếu Cinema 1 · 2D Phụ đề",
     "rateType": "PG-13",
     "poster": "./img/posters/inception.jpg"
   },
   {
-    "id": 3,
+    "id": 7,
     "title": "The Dark Knight",
     "slug": "the-dark-knight",
     "genre": "Action",
@@ -52,12 +134,12 @@
     ],
     "duration": "152 min",
     "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
-    "showInfo": "21:10 ~ 23:50 · Hôm nay, 06/05 · Phòng chiếu Cinema 2 · 2D Phụ đề",
+    "showInfo": "21:10 ~ 23:50 · Thứ 06/05 · Phòng chiếu Cinema 2 · 2D Phụ đề",
     "rateType": "PG-13",
     "poster": "./img/posters/the-dark-knight.jpg"
   },
   {
-    "id": 4,
+    "id": 8,
     "title": "The Lion King",
     "slug": "the-lion-king",
     "genre": "Animation",
@@ -71,12 +153,12 @@
     ],
     "duration": "88 min",
     "description": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself",
-    "showInfo": "17:50 ~ 20:30 · Hôm nay, 06/05 · Phòng chiếu Cinema 4 · 2D Phụ đề",
-    "rateType": "G",
+    "showInfo": "17:50 ~ 20:30 · Thứ 06/05 · Phòng chiếu Cinema 4 · 2D Phụ đề",
+    "rateType": "P",
     "poster": "./img/posters/the-lion-king.jpg"
   },
   {
-    "id": 5,
+    "id": 9,
     "title": "Frozen",
     "slug": "frozen",
     "genre": "Animation",
@@ -90,12 +172,12 @@
     ],
     "duration": "102 min",
     "description": "When the newly crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.",
-    "showInfo": "23:00 ~ 01:12 · Hôm nay, 06/05 · Phòng chiếu Cinema 1 · 2D Phụ đề",
+    "showInfo": "23:00 ~ 01:12 · Thứ 06/05 · Phòng chiếu Cinema 1 · 2D Phụ đề",
     "rateType": "PG",
     "poster": "./img/posters/frozen.jpg"
   },
   {
-    "id": 6,
+    "id": 10,
     "title": "Avengers: Endgame",
     "slug": "avengers-endgame",
     "genre": "Action",
@@ -109,7 +191,7 @@
     ],
     "duration": "181 min",
     "description": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
-    "showInfo": "19:30 ~ 22:00 · Hôm nay, 06/05 · Phòng chiếu Cinema 3 · 2D Phụ đề",
+    "showInfo": "19:30 ~ 22:00 · Thứ 06/05 · Phòng chiếu Cinema 3 · 2D Phụ đề",
     "rateType": "PG-13",
     "poster": "./img/posters/avengers-endgame.jpg"
   }

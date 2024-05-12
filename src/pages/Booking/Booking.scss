@@ -1,4 +1,4 @@
-#homePage {
+#booking {
   > div {
     @media (min-width: 768px) {
       width: 80%;
@@ -13,54 +13,29 @@
         color: #fafafa;
       }
       .card-body {
-        .seat {
-          font-size: 0.5rem;
-
-          @media (min-width: 576px) {
-            font-size: 13px;
-          }
-          @media (min-width: 768px) {
-            font-size: 1rem;
-          }
-
-          button {
-            color: #fff;
-            border: 2px solid transparent;
-
-            &.empty {
-              background: rgb(245, 34, 45);
-            }
-
-            &.block {
-              background: rgba(64, 64, 64, 1);
-            }
-
-            &:not(.block):hover {
-              opacity: 0.7;
-              cursor: pointer;
-            }
-
-            &.booking {
-              background: rgba(216, 45, 139, 1);
-              border-color: #fff;
-            }
+        :nth-child(1) {
+          span {
+            height: 2px;
+            width: 50%;
           }
         }
+        .des-seat {
+          div {
+            width: fit-content;
+            span {
+              width: 1.2rem;
+              height: 1.2rem;
+              &.empty {
+                background: rgb(245, 34, 45);
+              }
 
-        .info-seats {
-          span {
-            width: 1.2rem;
-            height: 1.2rem;
-            &.empty {
-              background: rgb(245, 34, 45);
-            }
+              &.block {
+                background: rgba(64, 64, 64, 1);
+              }
 
-            &.block {
-              background: rgba(64, 64, 64, 1);
-            }
-
-            &.booking {
-              background: rgba(216, 45, 139, 1);
+              &.booking {
+                background: rgba(216, 45, 139, 1);
+              }
             }
           }
         }
@@ -77,18 +52,24 @@
         }
         button {
           font-size: 14px;
-
           @media (min-width: 960px) {
             font-size: 1.2rem;
           }
-
           &:hover {
             opacity: 0.8;
           }
-
           &.btn-payment {
             background: rgba(216, 45, 139, 1);
             color: #fafafa;
+          }
+        }
+
+        i {
+          font-size: 1.2rem;
+        }
+        .short-info {
+          p {
+            color: rgb(249, 115, 22);
           }
         }
       }
